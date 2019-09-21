@@ -24,9 +24,14 @@ public class IndexController {
     }
 
 
-    @RequestMapping(value = "/app.json", method = RequestMethod.GET, params = {"shortname"})
-    public String get(@RequestParam(value = "shortname") String shortname) {
-        return "[" + new Gson().toJson(qw.getData(shortname)) + "]";
+    @RequestMapping(value = "/full", method = RequestMethod.GET, params = {"shortname"})
+    public String getFull(@RequestParam(value = "shortname") String shortname) {
+        return "[" + new Gson().toJson(qw.getFull(shortname)) + "]";
+    }
+
+    @RequestMapping(value = "/short", method = RequestMethod.GET, params = {"fullname"})
+    public String getShort(@RequestParam(value = "fullname") String fullname) {
+        return "[" + new Gson().toJson(qw.getShort(fullname)) + "]";
     }
 /*
     @RequestMapping(value = "/post", method = RequestMethod.POST)
