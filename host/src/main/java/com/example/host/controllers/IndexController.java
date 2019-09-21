@@ -1,6 +1,6 @@
 package com.example.host.controllers;
 
-import com.example.host.Client;
+import com.example.host.Ref;
 import com.example.host.db.Queries;
 import com.google.gson.Gson;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -15,23 +15,24 @@ public class IndexController {
 
     @RequestMapping("/")
     public String home() {
-        return "Its home";
+        return "Its /";
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET, params = {"id"})
-    public String js(@RequestParam(value = "id") int id) {
-        return "[" + new Gson().toJson(new Client(4, "Ivan", "hello")) + "]";
+    @RequestMapping(value = "/", method = RequestMethod.GET, params = {"shortname"})
+    public String js(@RequestParam(value = "shortname") String shortname) {
+        return "[" + new Gson().toJson(new Ref("vk.com", "vk")) + "]";
     }
 
 
-    @RequestMapping(value = "/app.json", method = RequestMethod.GET, params = {"id"})
-    public String get(@RequestParam(value = "id") int id) {
-        return "[" + new Gson().toJson(qw.getData(id)) + "]";
+    @RequestMapping(value = "/app.json", method = RequestMethod.GET, params = {"shortname"})
+    public String get(@RequestParam(value = "shortname") String shortname) {
+        return "[" + new Gson().toJson(qw.getData(shortname)) + "]";
     }
-
+/*
     @RequestMapping(value = "/post", method = RequestMethod.POST)
-    public String put(@RequestBody Client cl) {
-            qw.putData(cl);
-            return "[" + new Gson().toJson(cl) + "]";
+    public String put(@RequestBody Ref ref) {
+            qw.putData(ref);
+            return "[" + new Gson().toJson(ref) + "]";
     }
+*/
 }
