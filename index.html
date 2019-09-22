@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>page for references</title>
+	<link href="styles/sheets.css" rel="stylesheet">
+</head>
+<body>
+	
+	<div class="form-style-5">
+		    <form>
+		    	<input type="text" name="field2" placeholder="Enter short reference">
+		    </form>
+	</div>
+	<div class="type-1">
+	    <a href="" class="btn btn-1">
+	      <span class="txt">Click me</span>
+	      <span class="round"><i class="fa fa-chevron-right"></i></span>
+	    </a>
+	    	
+	</div>
+
+	<div class="form-style-5">
+		    <form>
+		    	<input type="text" name="field2" placeholder="Enter full reference">
+		    </form>
+	</div>
+	<div class="type-1">
+	    <a href="" class="btn btn-1">
+	      <span class="txt">Click me</span>
+	      <span class="round"><i class="fa fa-chevron-right"></i></span>
+	    </a>
+	    	
+	</div>
+
+	<div class="form-style-5">
+		    <form>
+		    	<input type="text" name="field2" placeholder="Enter short reference">
+		    </form>
+	</div>
+	<div class="type-1">
+	    <a href="" class="btn btn-1">
+	      <span class="txt">Hover me</span>
+	      <span class="round"><i class="fa fa-chevron-right"></i></span>
+	    </a>
+	    	
+	</div>
+
+
+	<button onclick="loadPhones()">Загрузить phones.json!</button>
+
+  <script>
+    function loadPhones() {
+      var xhr = new XMLHttpRequest();
+
+      xhr.open('GET', 'http://127.0.0.1:8080/', false);
+      //xhr.onreadystatechange = function ()alert(x.responseText);
+      xhr.send();
+
+      if (xhr.status != 200) {
+        // обработать ошибку
+        alert('Ошибка ' + xhr.status + ': ' + xhr.statusText);
+      } else {
+        // вывести результат
+        alert(xhr.responseText);
+      }
+    }
+  </script>
+
+</body>
+</html>
