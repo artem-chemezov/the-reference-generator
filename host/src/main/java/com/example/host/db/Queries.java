@@ -51,14 +51,4 @@ public class Queries {
         return ref;
 
     }
-
-    /*public void putData(Ref ref) {
-        jdbcTemplate.update(
-                "INSERT INTO Users(id, name, greeting) VALUES(?, ?, ?) " +
-                        "ON CONFLICT (id) " +
-                        "DO UPDATE " +
-                        "SET id = ?, name = ?, greeting = ?;",
-                client.getId(), client.getName(), client.getGreeting(), client.getId(), client.getName(), client.getGreeting()
-        );
-    }*/
 }

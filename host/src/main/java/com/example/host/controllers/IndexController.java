@@ -33,11 +33,4 @@ public class IndexController {
     public String getShort(@RequestParam(value = "fullname") String fullname) {
         return "[" + new Gson().toJson(qw.getShort(fullname)) + "]";
     }
-/*
-    @RequestMapping(value = "/post", method = RequestMethod.POST)
-    public String put(@RequestBody Ref ref) {
-            qw.putData(ref);
-            return "[" + new Gson().toJson(ref) + "]";
-    }
-*/
 }
